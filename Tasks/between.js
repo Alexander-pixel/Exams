@@ -1,18 +1,22 @@
 // Extract substring between prefix and suffix
 
-getvaluebetween = (str, p, s) => {
-  i = str.indexOf(p)
-    if ( i === -1 ) return ''
-    else {
-      k = i + p.length
-      str =  str.substring(k)
-      if ( s) {
-        i = str.indexOf( s )
-        if (i === -1) {
-          return  '' } else { str =  str.substring(0 , i)
-            }}}
-  return str
-}
+'use strict';
 
-const result = getvaluebetween('Hello <username> and bye!', '<', '>')
-console.log(result)
+const getValueBetween = (str, p, s) => {
+  const pIndex = str.indexOf(p);
+  if (pIndex === -1) {
+    return '';
+  } else {
+    const sIndex = str.indexOf(s);
+    if (sIndex === -1 || sIndex <= pIndex) {
+      return '';
+    } else {
+      return str.substring(pIndex + 1, sIndex);
+    }
+  }
+};
+
+// Usage
+
+const result = getValueBetween('Hello <username> and bye!', '>', '<');
+console.log(result);
