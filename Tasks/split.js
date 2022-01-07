@@ -1,11 +1,10 @@
 // Split array into two parts
 
-let split_Array=(index,array)=>{
-  begin=array.slice(0,index)
-    const len=array.length;
-  array=array.slice(index,len)
-    return [begin,array]
-}
+'use strict';
 
-const result = split_Array(3, ['a', 'b', 'c', 'd', 'e']);
+const splitArray = (index, array) => [array.slice(0, index), array.slice(index, array.length)];
+
+// Usage
+
+const result = splitArray(3, ['a', 'b', 'c', 'd', 'e']);
 console.log(result);
