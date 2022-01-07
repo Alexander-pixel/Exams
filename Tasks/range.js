@@ -1,15 +1,20 @@
 // Generate int array from given range
 
-;_range = ( ...Range ) => {;
-  let [from,to] = Range
-  if ( to   > from) {;
-    Range = new Array(to - from + 1);
-    for ( let i=from;i<=to;i++ ){
-      Range[i - from] = i;
-       }}else{
-          return [];
-}; return Range;
+'use strict';
+
+const range = (min, max) => {
+  if (max > min) {
+    const res = new Array(max - min + 1);
+    for (let i = min; i <= max; i++) {
+      res[i - min] = i;
+    }
+    return res;
+  } else {
+    return [];
+  }
 };
 
-const result = _range(10, 15)
-console.log(result)
+// Usage
+
+const result = range(10, 20);
+console.log(result);
