@@ -1,15 +1,18 @@
 // Convert number to file size in bytes, kb, mb, and gb
 
-let size=size=>{
+'use strict';
+
+const prefixes = ['b', 'kb', 'mb', 'gb', 'tb', 'pb', 'eb', 'zb', 'yb'];
+
+const getRoundSize = size => {
   if (size === 0) return '0';
   else {
-    const exp = Math.floor(Math.log(size)/Math.log(1000));
-    if (exp==0) return size + ' byte'
-    else if(exp==1) return Math.round(size / 1000) + ' kb'
-    else if(exp==2) return Math.round(size / 1000000) + ' mb'
-    else if(exp==3) return Math.round(size / 1000000000) + ' gb'
+    const exp = Math.floor(Math.log(size) / Math.log(1000));
+    return (Math.round(size / (1000 ^ exp)) + ' ' + prefixes[exp]);
   }
-}
+};
 
-const result = size(123456)
-console.log(result)
+// Usage
+
+const result = getRoundSize(123456);
+console.log(result);
