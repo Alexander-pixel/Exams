@@ -1,10 +1,10 @@
 // Get one random element from array
 
-const SAMPLE = arr => {
-  arr = arr[
-    Math.floor(Math.random()* arr.length)
-  ]; return arr
-};
+'use strict';
 
-const result = SAMPLE([123, 456, 789, 222, 333, 444]);
+const random = arr => arr[Math.floor(Math.random() * arr.length)];
+
+// Usage
+
+const result = random([123, 456, 789, 222, 333, 444]);
 console.log(result);
