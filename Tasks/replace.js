@@ -1,18 +1,19 @@
-// Replace substring with newstr
+// Replace substring with newStr
 
- Replace = (str, substr,newstr)=>{
-  if (substr    === ''){
-  return str
-  } else{
-  src = str
-  res = ''
-  do {
-   const _index = src.indexOf( substr) ; 
-   if (_index === -1) { return res + src }else{
-   const start = src.substring(0,_index);
-   src = src.substring(_index+substr.length,src.length)
-   res += start + newstr
- }} while (true); }; };
+'use strict';
 
-const result = Replace('Hello <username> and bye!', '<username>', 'Marcus')
-console.log(result)
+const replace = (str, substr, newStr) => {
+  if (substr.length === 0) {
+    return str;
+  } else {
+    const index = str.indexOf(substr);
+    const start = str.substring(0, index);
+    const end = str.substring(index + substr.length);
+    return start + newStr + end;
+  }
+};
+
+// Usage
+
+const result = replace('Hello <username> and bye!', '<username>', 'Marcus');
+console.log(result);
