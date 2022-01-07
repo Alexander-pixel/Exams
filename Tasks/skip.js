@@ -1,17 +1,18 @@
 // Remove values from array
 
-Skip =(T,...Remove)=> {
-x = 0;
-for (C of T) {
-for (X of Remove) {
-if (C === X) {
-  T.splice(x, 1);
-};
-}
-x++;
-}
-return T;
-}
+'use strict';
 
-const result = Skip([1, 2, 3, 4, 5], 2, 5);
+const removeSelected = (arr, ...values) => {
+  const res = [];
+  for (const item of arr) {
+    if (!values.includes(item)) {
+      res.push(item);
+    }
+  }
+  return res;
+};
+
+// Usage
+
+const result = removeSelected([1, 2, 3, 4, 5], 2, 5);
 console.log(result);
