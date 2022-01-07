@@ -3,13 +3,13 @@
 'use strict';
 
 const filter = (arr, type) => {
-    const res = [];
-    for (const item of arr) {
-        if (typeof item === type) {
-            res.push(item);
-        }
+  const res = [];
+  for (const item of arr) {
+    if (typeof item === type) {
+      res.push(item);
     }
-    return res;
+  }
+  return res;
 };
 
 // Usage
