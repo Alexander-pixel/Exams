@@ -1,14 +1,18 @@
 // Increment all numbers in dictionary
 
-let inc_numbers=(
-  (format_complete,...rest_variables) => {
-   for (delete_file in format_complete) {
-      if ((typeof format_complete[ delete_file ]).charAt(0).toUpperCase() ==='N'){
-      format_complete[ delete_file ] = format_complete[delete_file] + 1}
-   }
-  return format_complete;
-  }
-)
+'use strict';
 
-const result = inc_numbers({ a: 1, b: 2, c: 'hello', d: false });
+const inc = dict => {
+  for (const key in dict) {
+    const value = dict[key];
+    if (typeof value === 'number') {
+      dict[key]++;
+    }
+  }
+  return dict;
+};
+
+// Usage
+
+const result = inc({ a: 1, b: 2, c: 'hello', d: false });
 console.log(result);
