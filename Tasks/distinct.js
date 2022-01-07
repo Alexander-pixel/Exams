@@ -1,16 +1,10 @@
 // Deduplicate values in array
 
-DISTINCT =data=> {
-    A=new Set(); w=0;
-    data.forEach((a) => {
-        if (A.has(a)) {
-        data.splice(w, 1)
-        } else {
-        A.add(a)
-        };
-        w++;
-    });
-  return data;}
+'use strict';
 
-const result = DISTINCT([1, 2, 1, 3, 1, 4]);
+const distinct = arr => [...new Set(arr)];
+
+// Usage
+
+const result = distinct([1, 2, 1, 3, 1, 4]);
 console.log(result);
