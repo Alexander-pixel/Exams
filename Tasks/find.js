@@ -3,13 +3,13 @@
 'use strict';
 
 const find = (obj, value) => {
-    for (const key in obj) {
-        const val = obj[key];
-        if (val === value) {
-            return key;
-        }
+  for (const key in obj) {
+    const val = obj[key];
+    if (val === value) {
+      return key;
     }
-    return undefined;
+  }
+  return undefined;
 };
 
 // Usage
