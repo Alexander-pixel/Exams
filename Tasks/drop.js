@@ -3,14 +3,14 @@
 'use strict';
 
 const drop = (obj, ...keys) => {
-    const res = {};
-    for (const key in obj) {
-        if (!(keys.includes(key))) {
-            const value = obj[key];
-            res[key] = value;
-        }
+  const res = {};
+  for (const key in obj) {
+    if (!(keys.includes(key))) {
+      const value = obj[key];
+      res[key] = value;
     }
-    return res;
+  }
+  return res;
 };
 
 // Usage
