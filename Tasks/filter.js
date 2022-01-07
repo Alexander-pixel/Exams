@@ -1,11 +1,18 @@
 // Filter array by type name
 
-Filter =(T,t)=> {
-for (C of T) {
-x = T.indexOf(C);
-if (typeof T[x] !== t) { T.splice(x, 1) }; };
-return T;
-}
+'use strict';
 
-const result = Filter([1, 2, 'three', 4, 5, 'six'], 'number');
+const filter = (arr, type) => {
+    const res = [];
+    for (const item of arr) {
+        if (typeof item === type) {
+            res.push(item);
+        }
+    }
+    return res;
+};
+
+// Usage
+
+const result = filter([1, 2, 'three', 4, 5, 'six'], 'number');
 console.log(result);
