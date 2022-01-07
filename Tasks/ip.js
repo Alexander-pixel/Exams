@@ -1,17 +1,10 @@
 // Split string by the first occurrence of separator
 
-Parseip = i => {
-  a = []
-    if (i === '' ) return 0  ;
-  else {
-  B = i.split('.');
-  j = 0
-    for ( const b of B) {
-  a[j] = parseInt(b);
-  j++;
-  }};
-  return a;
-};
+'use strict';
 
-const result = Parseip('127.0.0.1')
-console.log(result)
+const parseIp = ip => ip.split('.').map(item => parseInt(item));
+
+// Usage
+
+const result = parseIp('127.0.0.1');
+console.log(result);
